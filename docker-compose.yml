@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: docker-db
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    networks:
+      - database
+  oracle:
+    container_name: oracle
+    image: oracle/database:21.3.0-xe
+    restart: always
+    environment:
+      ORACLE_PWD: welcome123
+      ORACLE_CHARACTERSET: AL32UTF8
+    ports:
+      - '1521:1521'
+    depends_on:
+      - postgres
+    networks:
+      - database
+networks:
+  database:
+    driver: bridge
+volumes:
+  pg-data:
+
