@@ -27,6 +27,21 @@ services:
       - postgres
     networks:
       - database
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: db
+      MYSQL_USER: coti
+      MYSQL_PASSWORD: coti
+      MYSQL_ROOT_PASSWORD: coti
+    ports:
+      - '3307:3307'
+    depends_on:
+      - oracle
+    networks:
+      - database
 networks:
   database:
     driver: bridge
