@@ -45,7 +45,6 @@ public class OracleDataSourceConfig {
 //    @ConfigurationProperties(prefix = "spring.datasource.oracle")
     public DataSource oracleDataSource() {
 
-        System.out.println("***"+ oracleDriveClass + "//" + oracleUrl + "==" + oraclePassword + "[]" + oracleUserName);
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setDriverClassName(oracleDriveClass);
         dataSource.setJdbcUrl(oracleUrl);

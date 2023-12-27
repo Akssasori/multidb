@@ -19,20 +19,20 @@ services:
 #       ME_CONFIG_BASICAUTH_PASSWORD: pass
 #     depends_on:
 #       - mongo
-#  postgres:
-#    container_name: postgres
-#    image: postgres
-#    restart: always
-#    environment:
-#      POSTGRES_USER: postgres
-#      POSTGRES_PASSWORD: postgres
-#      POSTGRES_DB: docker-db
-#    ports:
-#      - '5432:5432'
-#    volumes:
-#      - pg-data:/var/lib/postgresql/data
-#    networks:
-#      - database
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: docker-db
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    networks:
+      - database
   oracle:
     container_name: oracle
     image: oracle/database:21.3.0-xe
