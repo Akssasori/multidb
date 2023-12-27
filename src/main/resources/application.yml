@@ -20,14 +20,14 @@ spring:
   datasource:
     oracle:
       jdbcUrl: jdbc:oracle:thin:@localhost:1521/xe?serverTimezone=UTC&useSSL=false
-      username: SYS
+      username: "SYS AS SYSDBA"
       password: welcome123
-      drive-class-name: oracle.jdbc.OracleDriver
+      driver-class-name: oracle.jdbc.OracleDriver
     postgres:
       jdbcUrl:
       username:
       password:
-      drive-class-name: org.postgresql.Driver
+      driver-class-name: org.postgresql.Driver
   data:
     mongodb:
       host:
