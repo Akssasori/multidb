@@ -30,8 +30,9 @@ spring:
       driver-class-name: org.postgresql.Driver
   data:
     mongodb:
-      host:
-      port:
-      database:
-      username:
-      password:
+      host: localhost
+      port: 27017
+      database: multidb
+      username: root
+      password: example
+      uri: mongodb://root:example@localhost:27017
