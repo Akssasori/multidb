@@ -1,9 +1,6 @@
 package com.lucas.multidb.mongo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -11,7 +8,9 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Report {
     private String status;
     private LocalDateTime createAt;
+    private Integer qtd;
 }

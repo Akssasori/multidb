@@ -1,19 +1,6 @@
-## Configuração do MongoDB
-#spring.data.mongodb.host=your-mongo-host
-#spring.data.mongodb.port=27017
-#spring.data.mongodb.database=your-mongo-database
-#spring.data.mongodb.username=your-mongo-username
-#spring.data.mongodb.password=your-mongo-password
-#
-#  # Configuração do Oracle
-#spring.datasource.oracle.url=jdbc:oracle:thin:@//your-oracle-host:1521/your-oracle-sid
-#spring.datasource.oracle.username=your-oracle-username
-#spring.datasource.oracle.password=your-oracle-password
-#
-#  # Configuração do PostgreSQL
-#spring.datasource.postgres.url=jdbc:postgresql://your-postgres-host:5432/your-postgres-database
-#spring.datasource.postgres.username=your-postgres-username
-#spring.datasource.postgres.password=your-postgres-password
+server:
+  port: 1234
+
 spring:
   application:
     name: multi-database
@@ -36,3 +23,6 @@ spring:
       username: root
       password: example
       uri: mongodb://root:example@localhost:27017
+  output:
+    ansi:
+      enabled: Always
