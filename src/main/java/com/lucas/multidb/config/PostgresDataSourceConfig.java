@@ -57,7 +57,7 @@ public class PostgresDataSourceConfig {
 
         managerFactoryBean.setDataSource(postgresDataSource()); // setando um datasource
         managerFactoryBean.setPersistenceUnitName("oracle"); // noma para unidade de persistência
-        managerFactoryBean.setPackagesToScan("com.lucas.multidb.oracle.model"); // rastreiar o models
+        managerFactoryBean.setPackagesToScan("com.lucas.multidb.postgres.model"); // rastreiar o models
         HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
         managerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
         HashMap<String, Object> properties = new HashMap<>();
