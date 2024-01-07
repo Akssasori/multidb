@@ -42,7 +42,6 @@ public class OracleDataSourceConfig {
 
     @Bean(name = "oracleDataSource")
     @Primary
-//    @ConfigurationProperties(prefix = "spring.datasource.oracle")
     public DataSource oracleDataSource() {
 
         HikariDataSource dataSource = new HikariDataSource();
@@ -52,6 +51,8 @@ public class OracleDataSourceConfig {
         dataSource.setPassword(oraclePassword);
         return dataSource;
     }
+    // data source serve para fornecer uma conexão com um banco de dados, usado para configurar as propriedades da conexão
+    //com o banco
 
     @Primary
     @Bean(name = "oracleEntityManagerFactory")
@@ -70,6 +71,10 @@ public class OracleDataSourceConfig {
         return managerFactoryBean;
     }
 
+    // LocalContainerEntityManagerFactoryBean
+    // vamos configurar a integração entre a camada de persistência(banco de dados) e a lógica da aplicação
+    //
+
     @Primary
     @Bean(name = "oracleTransactionManager")
     public PlatformTransactionManager oracleTransactionManager () {
@@ -78,5 +83,9 @@ public class OracleDataSourceConfig {
         return transactionManager;
     }
 
+    // precisamos configurar o PlatformTransactionManager para cada banco porque ele é responsável por coordebnar as transações
+    //consistência nas transações
+    // ele consegue coordernar as transações separadamente
+    //significa que as transações em um banco de dados não afetarão automaticamente as transações em outro, mantendo atomicidade dentro do escopo
 
 }

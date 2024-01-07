@@ -39,7 +39,7 @@ public class TransferDataController {
             List<UserLegacy> legacyList = userLegacyRepository.findAll();
 
             List<User> newUsers = new ArrayList<>();
-            int count = 1;
+            int count = 0;
 
             for (UserLegacy userLegacy : legacyList) {
                 User build = User.builder()
